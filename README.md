@@ -5,14 +5,14 @@ Welcome to my **JavaScript Practice Repo** — a structured collection of exerci
 ---
 
 ## 📁 Folder Structure
-
+```text
 JavaScript/
 ├── Arrays/ # Practice problems related to arrays
 ├── DOM/ # Hands-on exercises using the Document Object Model
 ├── Exception handling/ # Try-catch, throwing errors, and edge-case handling
 ├── Functions/ # Function-based problems, categorized by difficulty
 ├── Projects/ # Small real-world practice projects
-
+```
 
 ---
 
