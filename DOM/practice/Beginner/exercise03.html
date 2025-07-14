@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .error{
+      color: red;
+    }
+    .success{
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h3> Exercise 3: Submit Form </h3>
+
+  <label>
+    <input type="checkbox" name="" id="check"> I Agree to the terms and Conditions
+  </label>
+
+  <button type="submit" onclick="submit()"> Submit form </button>
+
+  <p id="feedback"></p>
+
+  <script>
+    function submit(){
+      e.preventdefault();
+
+      const check = document.getElementById("check").checked;
+      const message = document.getElementById("feedback");
+
+      if(!check){
+        message.textContent = `please agree to the terms and Conditions`;
+        message.classList.add('error')
+      }
+      else{
+        message.textContent = "Thank you";
+        message.classList.add('success');
+      }
+    }
+  </script>
+</body>
+</html>

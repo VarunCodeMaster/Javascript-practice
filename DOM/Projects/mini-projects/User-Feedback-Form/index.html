@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Feedback Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1> User Feedback Form </h1>
+    
+    <div class="form-field">
+    <label class="name">
+      Name:<input type="text" id="name">
+    </label>
+
+    <label>
+      Age: <input type="number" name="" id="age">
+    </label>
+
+    <label for="gender">
+      Gender: 
+    <input type="radio" name="gender" id="male"> Male
+    <input type="radio" name="gender" id="female"> Female
+    </label>
+
+    <label>
+      Feedback:
+      <textarea name="" id="text" rows="4" cols="10"></textarea>
+      <p id="result">Characters: 0 | Remaining: 50</p>  
+    </label>
+
+    <select name="" id="rating">
+      <option value=""> Rate the Form </option>
+      <option value="Bad">Bad</option>
+      <option value="Average">Average</option>
+      <option value="Good">Good</option>
+    </select>
+
+    <label for="checkbox">
+      Agree to the terms
+      <input type="checkbox" name="" id="checkbox"> 
+    </label>
+
+    <button onclick="submit()" class="submit">Submit</button>
+    </div>
+    <p id="result"></p>
+  </div>
+</body>
+</html>

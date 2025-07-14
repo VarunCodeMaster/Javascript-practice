@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label>
+  Enter a number1: 
+  <input type="number" id="num1">
+  </label>
+
+  <button onclick="check()"> Check Even Or Odd</button>
+
+  <p id="result"></p>
+
+  <script>
+    function check(){
+    const num1 = document.getElementById("num1");
+    const value = num1.value;
+    const result = document.getElementById("result");
+
+    const num = parseInt(value);
+
+    if(isNaN(num) || value.trim() === ""){
+      result.textContent = "Result: Please enter the correct number";
+      return;
+    }
+
+    if(num % 2 === 0){
+      result.textContent = `Result: ${num} is Even`;
+    }
+    else{
+      result.textContent = `Result: ${num} is Odd`;
+    }
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validator</title>
+</head>
+<body>
+  <h1>Form Validator</h1>
+
+  <label>
+  Name: <input type="text" id="name">
+  </label>
+
+  <label>
+    Age: <input type="number" id="age">
+  </label>
+
+  <button type="submit" onclick="submit()">Submit</button>
+
+  <p id="greet"></p>
+
+  <script>
+    function submit(){
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const message = document.getElementById("greet");
+
+    if(!name || !age){
+      message.textContent = "Please fill all the details";
+      message.style.color = "red";
+    }
+    else{
+      message.textContent = `Hello ${name}, You are ${age} years old`;
+      message.style.color = "green";
+    }
+    }
+  </script>
+</body>
+</html>

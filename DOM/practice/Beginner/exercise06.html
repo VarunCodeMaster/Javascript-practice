@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #result{
+      font-weight: bold;
+    }
+    .normal{
+      color: green;
+    }
+    .warn{
+      color: orange;
+    }
+    .danger{
+      color: red;
+    }
+    #contentDisplay{
+      width: 50%;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercise 06: Character Count in Textarea</h1>
+
+  <textarea name="text" id="textarea" rows="5" cols="30"></textarea>
+
+  <div id="contentDisplay">Your Content: </div>
+  <p id="result">Characters: | Remaining: </p>
+
+  <script>
+    
+      const textArea = document.querySelector("#textarea");
+      const result = document.querySelector("#result");
+      const content = document.querySelector("#contentDisplay");
+
+      const wordLimit = 200;
+
+      textArea.addEventListener("input", function() {
+        const count = textArea.value.length;
+        const remaining = wordLimit - count;
+        result.textContent = `Characters: ${count} | Remaining: ${remaining}`;
+
+        result.classList.remove('normal', 'warn', 'danger');
+
+        if(count <= wordLimit * 0.7){
+        result.classList.add('normal');
+        }
+        else if(count <= wordLimit){
+          result.classList.add('warn');
+        }
+        else{
+          result.classList.add('danger');
+        }
+      });
+
+      textArea.addEventListener("input", function() {
+        const contentDisplay = textArea.value;
+        content.textContent = `Your content: ${contentDisplay}`;
+      })
+
+      
+  </script>
+</body>
+</html>

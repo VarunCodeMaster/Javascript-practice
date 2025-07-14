@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1> Exercise 05: Gender Selection </h1>
+
+  <label>
+    <input type="radio" name="gender" value="Male"> Male
+  </label>
+
+  <label>
+    <input type="radio" name="gender" value="female"> Female 
+  </label>
+
+  <button onclick="select()"> Selected </button>
+
+  <p id="selected"></p>
+
+  <script>
+    function select(){
+    const selected = document.getElementById("selected");
+
+    let gender = "";
+    const genderRadios = document.getElementsByName("gender");
+    
+    genderRadios.forEach(radio => {
+      if(radio.checked){
+        gender = radio.value;
+      }
+    });
+
+    if(gender){
+      selected.textContent = `You selected: ${gender}`;
+    }
+    else{
+      selected.textContent = `Please select a gender`;
+    }
+  }
+  </script>
+</body>
+</html>

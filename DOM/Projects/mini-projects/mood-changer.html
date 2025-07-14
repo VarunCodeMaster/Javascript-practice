@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Changer</title>
+</head>
+<body>
+  <p id="mood">Current Mood: Meh</p>
+  <button id="changeMood">Change Mood!</button>
+
+  <script>
+    const mood = document.getElementById("mood");
+    const btn = document.getElementById("changeMood");
+
+    const moods = ["Happy Vibes! 😄", "Grumpy Cat Mode 😾", "Taco Party! 🌮"];
+
+    btn.addEventListener("click", function(){
+      const randomIndex = Math.floor(Math.random() * moods.length);
+      mood.textContent = `Current Mood: ${moods[randomIndex]}`;
+    })
+  </script>
+</body>
+</html>
