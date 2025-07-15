@@ -37,3 +37,14 @@ function reverseNumberIterative(num) {
 
 // const num1 = 12345;
 // console.log(`Original: ${num1}, Reversed: ${reverseNumber(num1)}`); //54321
+
+//Topic: Recursive
+// Write a recursive function printReverse(n)
+
+function printReverse(n) {
+  if (n < 1) return;
+  console.log(n);
+  printReverse(n - 1);
+}
+
+printReverse(5);
