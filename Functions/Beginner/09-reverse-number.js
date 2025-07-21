@@ -12,8 +12,8 @@ console.log(reverseNumber(5678));
 console.log(reverseNumber(-123));
 console.log(reverseNumber(123.45));
 
-/*
-// --- Alternative approach: Iterative (without converting to string) ---
+/* --- Alternative approach: Iterative (without converting to string) ---
+
 function reverseNumberIterative(num) {
   const isNegative = num < 0;
   let absoluteNum = Math.abs(num);
@@ -33,10 +33,9 @@ function reverseNumberIterative(num) {
   // Apply the original sign
   return isNegative ? -reversedNum : reversedNum;
 }
-*/
 
-// const num1 = 12345;
-// console.log(`Original: ${num1}, Reversed: ${reverseNumber(num1)}`); //54321
+ const num1 = 12345;
+console.log(`Original: ${num1}, Reversed: ${reverseNumber(num1)}`); //54321*/
 
 //Topic: Recursive
 // Write a recursive function printReverse(n)

@@ -1,3 +1,7 @@
+// Topic: Functions
+// Level: Beginner
+// Problem: Sqaure of two numbers
+
 function sqaureNumber(num) {
   return num * num;
 }
