@@ -1,0 +1,35 @@
+<!-- Write a JavaScript program to set paragraph background color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Colour Changer</title>
+</head>
+<body id="colorChanger">
+  <button  onclick="changeYellow()"> BG to Yellow </button>
+  <button  onclick="changeBlack()"> BG to Black </button>
+  <button  onclick="changeRed()"> BG to Red </button>
+  <button  onclick="changeWhite()"> Back to Noraml </button>
+
+  <script>
+    function changeYellow(){
+      const bgColour = document.getElementById("colorChanger");
+      bgColour.style.backgroundColor = "Yellow";
+    }
+    function changeBlack(){
+      const bgColour = document.getElementById("colorChanger");
+      bgColour.style.backgroundColor = "Black";
+    }
+    function changeRed(){
+      const bgColour = document.getElementById("colorChanger");
+      bgColour.style.backgroundColor = "Red";
+    }
+    function changeWhite(){
+      const bgColour = document.getElementById("colorChanger");
+      bgColour.style.backgroundColor = "White";
+    }
+  </script>
+</body>
+</html>

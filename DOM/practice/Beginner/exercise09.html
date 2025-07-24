@@ -1,0 +1,25 @@
+<!-- Style Paragraph -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+  <title>JS DOM paragraph style</title>
+</head> 
+<body>
+  <p id ='text'>JavaScript DOM Exercises</p> 
+  <div>
+    <button id="jsstyle"
+    onclick="js_style()">Style</button>
+  </div>
+
+<script>
+  function js_style(){
+    const paragraph = document.getElementById("text");
+    paragraph.style.fontSize = "30px";
+    paragraph.style.color = "red";
+    paragraph.style.font = "Comic Sans MS";
+  }  
+</script>
+</body>
+</html>

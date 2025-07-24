@@ -1,0 +1,41 @@
+<!-- Topic: DOM - Attribute Handling
+Level: Beginner
+Problem: Write a function to get specific attributes from a link element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attribute Handling</title>
+</head>
+<body>
+  <a id="myLink" href="https://example.com" hreflang="en" rel="noopener" target="_blank" type="text/html">
+    Visit Example
+  </a>
+
+  <button onclick="getLinkAttributes('myLink')">Get Link Attributes</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function getLinkAttributes(linkId){
+      const link = document.getElementById(linkId);
+      if(!link){
+        console.log("Link not found");
+        return;
+      }
+
+      const attributes = {
+        href: link.getAttribute("href"),
+        hreflang: link.getAttribute("hreflang"),
+        rel: link.getAttribute("rel"),
+        target: link.getAttribute("target"),
+        type: link.getAttribute("type")
+      };
+
+      document.getElementById("output").textContent = JSON.stringify(attributes, null, 2);
+    }
+  </script>
+</body>
+</html>
