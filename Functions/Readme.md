@@ -20,5 +20,3 @@ Functions/
 ├── Beginner/
 ├── Intermediate/
 ├── Advanced/
-├── Mini-Projects/
-├── Projects/

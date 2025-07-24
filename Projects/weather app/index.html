@@ -8,16 +8,123 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1> Find the weather and what to wear, instantly. </h1>
-    <div class="type-area">
-    <input type="text" id="textarea" placeholder="Enter your City"> 
-    <button class="search-btn"> Search </button>
-    </div>
-    <div class="weather-details-display">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <p>search your city to know the weather!</p>
-    </div>
-  </div>
+    <nav class="nav-bar">
+      <div class="container">
+      <h1 class="logo">WearCast</h1>
+      <div class="nav-elements">
+        <button class="hamburger" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Weather</a></li>
+          <li><a href="#">Outfit Suggestions</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#"><i class="fa-solid fa-toggle-off"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+    <section class="hero-container">
+      <h2>Find the weather and what to wear, instantly.</h2>
+      <p>Get real-time weather and outfit tips</p>
+
+      <div class="search-box">
+         <i class="fa-solid fa-magnifying-glass"></i>
+         <input type="text" placeholder="Enter your city" >
+         <button class="search-btn">Search</button>
+      </div>
+    </section>
+
+       
+    <section class="weather-info">
+      <div class="sub-heading">
+        <h2>Weather Info</h2>
+       </div>
+      <div class="container1">
+      <div class="image">
+        <img src="assets/chennai.jpg" alt="Chennai" >
+      </div>
+      <div class="details">
+        <h4>Current Weather in Chennai</h4>
+        <p>Temperature: 33°C, humidity: 60%</p>
+      </div>
+      </div>
+    </section>
+
+      
+
+    <section class="outfit-suggestions">
+      <div class="sub-heading">
+        <h2>Outfit suggestions</h2>
+      </div>
+      <div class="outfits">
+      <div class="outfit1">
+        <img src="assets/outfit1.jpeg" alt="">
+        <h4>Outfit 1</h4>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, corrupti?</p>
+        <button> Outfit </button>
+      </div>
+      <div class="outfit2">
+        <img src="assets/outfit2.jpeg" alt="">
+        <h4>Outfit 1</h4>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, corrupti?</p>
+        <button> Outfit </button>
+      </div>
+      <div class="outfit3">
+        <img src="assets/outfit3.jpeg" alt="">
+        <h4>Outfit 1</h4>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, corrupti?</p>
+        <button> Outfit </button>
+      </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="sub-heading">
+        <h2>About</h2>
+      </div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel illum numquam modi mollitia magni tempora nisi at excepturi. Nihil, excepturi maxime corrupti voluptatum sint eos recusandae? Non, fuga ut ullam debitis ea tenetur distinctio. Dolores in nesciunt totam alias sit!</p>
+    </section>
+
+    <section class="contact-section">
+      <div class="sub-heading">
+        <h2>Contact</h2>
+      </div>
+      <form class="form-elements">
+        <input type="text" class="email-text" placeholder="Enter your email">
+        <textarea class="text-area" placeholder="What should i improve"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="other-links">
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <ul class="footer-elements">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Weather</a></li>
+          <li><a href="#">Outfit Suggestions</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+
+      <p>Made with ❤️ by Varun</p>
+    </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('nav').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
