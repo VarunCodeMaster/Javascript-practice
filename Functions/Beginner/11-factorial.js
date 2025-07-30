@@ -1,14 +1,19 @@
-// function factorial(num) {
-//   if (num === 0) return 1;
+// Topic: Recursive function
+// Level: Beginner
+// Problem: Factorial Number
 
-//   return num * factorial(num - 1); //Using recursive method
-// }
+function factorial(num) {
+  if (num === 0) return 1;
 
-// console.log(factorial(5));
-// console.log(factorial(10));
+  return num * factorial(num - 1); //Using recursive method
+}
+
+console.log(factorial(0));
+console.log(factorial(5));
+console.log(factorial(10));
 
 //Alternative method
-function factorial(n) {
+/*function factorial(n) {
   if (typeof n !== "number") {
     console.error("Error: This is not a number");
     return "";
@@ -29,4 +34,4 @@ function factorial(n) {
 }
 
 const num1 = 5;
-console.log(`Factorial of ${num1} is: ${factorial(num1)}`);
+console.log(`Factorial of ${num1} is: ${factorial(num1)}`);*/

@@ -18,6 +18,7 @@ function isPalindrome(str) {
 console.log(isPalindrome("Varun"));
 console.log(isPalindrome("Madam"));
 console.log(isPalindrome("RaceCar"));
+console.log(isPalindrome("A")); //true, because A reversed is A
 
 //Alternative and short method
 /*function isPalindrome(str) {

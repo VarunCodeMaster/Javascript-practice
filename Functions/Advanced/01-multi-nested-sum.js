@@ -1,3 +1,7 @@
+// Topic: Nested function
+// Level: Advanced
+// Problem: Multi Nested Sum
+
 function outer(x) {
   function middle(y) {
     function inner(z) {

@@ -25,3 +25,12 @@ const findMaxOfTwo = (num1, num2) => {
 
 console.log(findMaxOfTwo(10, 5));
 console.log(findMaxOfTwo(5, 10));
+
+//using reduce method
+const nums = [4, 10, 20, 15, 7];
+
+const max = nums.reduce((acc, curr) => {
+  return curr > acc ? curr : acc;
+}, nums[0]);
+
+console.log(max);

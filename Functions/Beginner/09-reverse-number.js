@@ -1,7 +1,7 @@
-function reverseNumber(num) {
-  const isNegative = num < 0;
-  const absoluteNum = Math.abs(num);
+// Problem: Reverse Number
+// Level: Beginner
 
+function reverseNumber(num) {
   let reversedStr = String(num).split("").reverse().join("");
   let reversedNum = Number(reversedStr);
   return reversedNum;
@@ -40,10 +40,10 @@ console.log(`Original: ${num1}, Reversed: ${reverseNumber(num1)}`); //54321*/
 //Topic: Recursive
 // Write a recursive function printReverse(n)
 
-function printReverse(n) {
+/*function printReverse(n) {
   if (n < 1) return;
   console.log(n);
   printReverse(n - 1);
 }
 
-printReverse(5);
+printReverse(5);*/ //won't reverse the number, instead prints the number in reverse order.
