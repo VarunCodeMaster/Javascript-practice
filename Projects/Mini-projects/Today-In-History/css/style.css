@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 95%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title-txt {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.title-date {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.date-picker {
+  margin-bottom: 1.5rem;
+}
+
+#date-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.event-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #eaf6ff;
+  margin-bottom: 2rem;
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: 1rem;
+}
+
+.event-info h3 {
+  font-size: 1.25rem;
+  color: #2c5282;
+  margin-bottom: 0.5rem;
+}
+
+.event-info p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.footer-txt {
+  font-size: 0.9rem;
+  color: #888;
+}

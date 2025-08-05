@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Today In History</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2 class="title-txt">Today in History</h2>
+    <h4 class="title-date" id="display-date">Loading...</h4>
+
+    <div class="date-picker">
+      <label for="date-input">Select Date:</label>
+      <input type="date" id="date-input" />
+    </div>
+
+    <div class="event-card">
+      <img id="event-image" src="assets/fallback.jpg" alt="Historical Image" />
+      <div class="event-info">
+        <h3 id="event-year">Year</h3>
+        <p id="event-text">Event details will appear here.</p>
+      </div>
+    </div>
+
+    <footer class="footer-txt">Powered by Wikipedia API</footer>
+  </div>
+
+</body>
+</html>
