@@ -1,0 +1,2051 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <b:include data='blog' name='all-head-content'/>
+    <title><data:blog.pageTitle/></title>
+    
+    <b:skin><![CDATA[
+/* =====================================================
+   AFFILIATE BLOG TEMPLATE - MINIMAL NEUTRAL DESIGN
+   Pure HTML/CSS/JS - Blogger Compatible
+   Colors: White, Black, Charcoal, Beige, Sand
+===================================================== */
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #1A1A1A;
+    --color-charcoal: #3A3A3A;
+    --color-grey: #6B6B6B;
+    --color-light-grey: #E5E5E5;
+    --color-beige: #F5F3EF;
+    --color-sand: #E8E2D8;
+    --color-warm-sand: #D9CFC1;
+    
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Work Sans', sans-serif;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 4rem;
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-charcoal);
+    background-color: var(--color-beige);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-black);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===== UTILITIES ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 2px solid var(--color-black);
+}
+
+.btn-primary:hover {
+    background: var(--color-charcoal);
+    border-color: var(--color-charcoal);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+}
+
+.btn-secondary:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.btn-affiliate {
+    background: var(--color-warm-sand);
+    color: var(--color-black);
+    border: 2px solid var(--color-warm-sand);
+    font-weight: 600;
+}
+
+.btn-affiliate:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+/* ===== HEADER ===== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-light-grey);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.site-header.scrolled {
+    box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    letter-spacing: 0.3px;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-black);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: var(--color-black);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 2px;
+    background: var(--color-black);
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===== SEARCH BAR ===== */
+.search-container {
+    margin-top: 100px;
+    padding: var(--spacing-lg) 0;
+    background: var(--color-white);
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-light-grey);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--color-black);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-grey);
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-content {
+    padding-top: 120px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ===== PRODUCT GRID ===== */
+.product-feed {
+    background: transparent;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.product-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background: var(--color-sand);
+}
+
+.product-info {
+    padding: var(--spacing-md);
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-black);
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: var(--color-grey);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-grey);
+    background: var(--color-beige);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+.sidebar-section {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-black);
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    font-weight: 500;
+    color: var(--color-charcoal);
+}
+
+.category-item:hover,
+.category-item.active {
+    background: var(--color-beige);
+    color: var(--color-black);
+}
+
+/* ===== PRODUCT DETAIL PAGE ===== */
+.product-detail {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.image-gallery {
+    position: relative;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    background: var(--color-sand);
+}
+
+.detail-content h1 {
+    margin-bottom: var(--spacing-md);
+}
+
+.features-list {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.features-list li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    border-bottom: 1px solid var(--color-light-grey);
+    position: relative;
+}
+
+.features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+.affiliate-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.related-products {
+    margin-top: var(--spacing-xl);
+}
+
+.related-products h3 {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+    background: var(--color-white);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-xl);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-grey);
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-section h4 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-section p,
+.footer-links a {
+    color: var(--color-light-grey);
+    line-height: 1.8;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-charcoal);
+    border-radius: 50%;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-charcoal);
+    color: var(--color-light-grey);
+    font-size: 0.9rem;
+}
+
+/* ===== ADMIN PANEL ===== */
+.admin-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-beige);
+}
+
+.login-box {
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-black);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 0.875rem;
+    border: 2px solid var(--color-light-grey);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-black);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.admin-dashboard {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.admin-header {
+    background: var(--color-white);
+    padding: var(--spacing-md) 0;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.admin-nav {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.admin-content {
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-lg);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-light-grey);
+}
+
+.admin-table th {
+    font-weight: 600;
+    color: var(--color-black);
+    background: var(--color-beige);
+}
+
+.admin-table img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn-edit {
+    background: var(--color-warm-sand);
+    color: var(--color-black);
+}
+
+.btn-delete {
+    background: var(--color-charcoal);
+    color: var(--color-white);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.close-modal {
+    font-size: 1.5rem;
+    color: var(--color-grey);
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: var(--color-black);
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.page-btn {
+    padding: 0.75rem 1.25rem;
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 2px solid var(--color-light-grey);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+.page-btn:hover,
+.page-btn.active {
+    background: var(--color-black);
+    color: var(--color-white);
+    border-color: var(--color-black);
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-section {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===== BLOG PAGE ===== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.blog-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.blog-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: var(--color-sand);
+}
+
+.blog-content {
+    padding: var(--spacing-lg);
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    color: var(--color-grey);
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-excerpt {
+    color: var(--color-grey);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ===== 404 PAGE ===== */
+.error-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error-content h1 {
+    font-size: 6rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        position: static;
+        max-width: 100%;
+    }
+    
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--color-white);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        gap: var(--spacing-md);
+        transition: left 0.3s ease;
+        border-top: 1px solid var(--color-light-grey);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .affiliate-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== LOADING STATE ===== */
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--color-grey);
+}
+
+/* ===== UTILITIES ===== */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .site-header,
+    .site-footer,
+    .sidebar,
+    .admin-nav {
+        display: none;
+    }
+}
+
+]]></b:skin>
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class='site-header' id='header'>
+        <div class='container'>
+            <div class='header-inner'>
+                <a class='logo' href='/' title='Home'>AffiliateHub</a>
+                
+                <nav class='nav-wrapper'>
+                    <ul class='nav-menu' id='navMenu'>
+                        <li><a href='/' id='navHome'>Home</a></li>
+                        <li><a href='#' id='navCategories'>Categories</a></li>
+                        <li><a href='#' id='navAbout'>About</a></li>
+                        <li><a href='#' id='navBlog'>Blog</a></li>
+                        <li><a href='#' id='navContact'>Contact</a></li>
+                        <li><a href='#' id='navAdmin'>Admin</a></li>
+                    </ul>
+                </nav>
+                
+                <button class='mobile-menu-toggle' id='mobileMenuToggle' aria-label='Toggle menu'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT AREA ===== -->
+    <div id='mainApp'></div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class='site-footer'>
+        <div class='container'>
+            <div class='footer-grid'>
+                <div class='footer-section'>
+                    <h4>About AffiliateHub</h4>
+                    <p>Your trusted source for curated product recommendations. We carefully select and review products to help you make informed purchasing decisions.</p>
+                    <div class='social-icons'>
+                        <a href='#' class='social-icon' aria-label='Facebook'>f</a>
+                        <a href='#' class='social-icon' aria-label='Twitter'>t</a>
+                        <a href='#' class='social-icon' aria-label='Instagram'>i</a>
+                        <a href='#' class='social-icon' aria-label='Pinterest'>p</a>
+                    </div>
+                </div>
+                
+                <div class='footer-section'>
+                    <h4>Quick Links</h4>
+                    <ul class='footer-links'>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='#about'>About Us</a></li>
+                        <li><a href='#blog'>Blog</a></li>
+                        <li><a href='#contact'>Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class='footer-section'>
+                    <h4>Legal</h4>
+                    <ul class='footer-links'>
+                        <li><a href='#privacy'>Privacy Policy</a></li>
+                        <li><a href='#disclaimer'>Affiliate Disclaimer</a></li>
+                        <li><a href='#terms'>Terms &amp; Conditions</a></li>
+                        <li><a href='#cookies'>Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class='footer-section'>
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new products and exclusive deals.</p>
+                    <div class='form-group'>
+                        <input type='email' class='form-input' placeholder='Your email address' aria-label='Email'/>
+                        <button class='btn btn-primary mt-lg'>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='footer-bottom'>
+                <p>© 2026 AffiliateHub. All rights reserved. As an Amazon Associate, we earn from qualifying purchases.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div class='modal' id='productModal'>
+        <div class='modal-content'>
+            <div class='modal-header'>
+                <h3>Product Details</h3>
+                <span class='close-modal' id='closeModal'>×</span>
+            </div>
+            <div id='modalBody'></div>
+        </div>
+    </div>
+
+    <!-- ===== MAIN JAVASCRIPT ===== -->
+    <script type='text/javascript'>
+    //<![CDATA[
+    
+    /* =====================================================
+       AFFILIATE BLOG - JAVASCRIPT
+       Complete functionality with localStorage-based CMS
+    ===================================================== */
+    
+    // ===== GLOBAL STATE =====
+    const APP_STATE = {
+        currentPage: 'home',
+        products: [],
+        filteredProducts: [],
+        currentCategory: 'all',
+        searchQuery: '',
+        isAdmin: false,
+        currentProduct: null,
+        currentPage: 1,
+        productsPerPage: 9
+    };
+    
+    // ===== INITIAL DATA =====
+    const INITIAL_PRODUCTS = [
+        {
+            id: 1,
+            title: "Premium Stainless Steel Cookware Set",
+            shortDescription: "Professional-grade 12-piece cookware set with copper core technology for superior heat distribution.",
+            fullDescription: "Experience culinary excellence with our premium stainless steel cookware set. Each piece features a revolutionary copper core that ensures even heat distribution, eliminating hot spots and providing consistent cooking results. The ergonomic handles stay cool during cooking, and the glass lids allow you to monitor your food without losing heat or moisture.",
+            image: "https://images.unsplash.com/photo-1584990347449-39b4aa457c4c?w=800",
+            category: "Kitchen Products",
+            features: [
+                "12-piece complete set",
+                "Copper core technology",
+                "Dishwasher safe",
+                "Oven safe up to 500°F",
+                "Lifetime warranty"
+            ],
+            affiliateLinks: {
+                amazon: "https://amazon.com",
+                flipkart: "https://flipkart.com"
+            },
+            price: "$299.99"
+        },
+        {
+            id: 2,
+            title: "Wireless Noise-Cancelling Headphones",
+            shortDescription: "Industry-leading noise cancellation with 30-hour battery life and premium sound quality.",
+            fullDescription: "Immerse yourself in pure sound with our advanced wireless headphones. Featuring adaptive noise cancellation that adjusts to your environment, these headphones deliver an unparalleled listening experience. The 40mm drivers produce rich, detailed audio across all frequencies.",
+            image: "https://images.unsplash.com/photo-1545127398-14699f92334b?w=800",
+            category: "Electronics",
+            features: [
+                "30-hour battery life",
+                "Adaptive noise cancellation",
+                "Bluetooth 5.0",
+                "Comfortable memory foam padding",
+                "Quick charge technology"
+            ],
+            affiliateLinks: {
+                amazon: "https://amazon.com",
+                flipkart: "https://flipkart.com"
+            },
+            price: "$349.99"
+        },
+        {
+            id: 3,
+            title: "Smart Robot Vacuum Cleaner",
+            shortDescription: "Intelligent cleaning with laser navigation, auto-emptying base, and app control.",
+            fullDescription: "Transform your cleaning routine with this intelligent robot vacuum. Using advanced laser navigation, it maps your home for efficient cleaning patterns. The powerful suction handles carpets and hard floors with ease, while the auto-emptying base means you can forget about vacuuming for weeks.",
+            image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800",
+            category: "Home Essentials",
+            features: [
+                "Laser navigation mapping",
+                "Auto-empty base station",
+                "2-in-1 vacuum and mop",
+                "App and voice control",
+                "90-day dust capacity"
+            ],
+            affiliateLinks: {
+                amazon: "https://amazon.com",
+                flipkart: "https://flipkart.com"
+            },
+            price: "$599.99"
+        },
+        {
+            id: 4,
+            title: "Luxury Skincare Gift Set",
+            shortDescription: "Complete 5-piece skincare routine with natural ingredients and anti-aging properties.",
+            fullDescription: "Elevate your skincare routine with this luxurious gift set. Each product is formulated with premium natural ingredients and advanced peptides to nourish, hydrate, and revitalize your skin. Perfect for all skin types and clinically proven to reduce fine lines.",
+            image: "https://images.unsplash.com/photo-1556229010-aa9e36d00f36?w=800",
+            category: "Beauty & Health",
+            features: [
+                "5-piece complete set",
+                "Natural ingredients",
+                "Anti-aging formula",
+                "Dermatologist tested",
+                "Cruelty-free"
+            ],
+            affiliateLinks: {
+                amazon: "https://amazon.com",
+                flipkart: "https://flipkart.com"
+            },
+            price: "$129.99"
+        },
+        {
+            id: 5,
+            title: "Designer Leather Crossbody Bag",
+            shortDescription: "Genuine leather minimalist bag with adjustable strap and multiple compartments.",
+            fullDescription: "Crafted from premium full-grain leather, this crossbody bag combines elegance with functionality. The minimalist design features carefully organized compartments for your essentials, while the adjustable strap ensures comfortable wear all day long.",
+            image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800",
+            category: "Fashion",
+            features: [
+                "Genuine full-grain leather",
+                "Multiple compartments",
+                "Adjustable strap",
+                "RFID protection",
+                "Lifetime craftsmanship guarantee"
+            ],
+            affiliateLinks: {
+                amazon: "https://amazon.com",
+                flipkart: "https://flipkart.com"
+            },
+            price: "$179.99"
+        },
+        {
+            id: 6,
+            title: "Ergonomic Office Chair",
+            shortDescription: "Premium mesh chair with lumbar support and fully adjustable features for all-day comfort.",
+            fullDescription: "Experience superior comfort during long work hours with this ergonomic office chair. The breathable mesh back keeps you cool, while the adjustable lumbar support adapts to your spine's natural curve. Every element is adjustable to create your perfect seating position.",
+            image: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=800",
+            category: "Home Essentials",
+            features: [
+                "Breathable mesh back",
+                "Adjustable lumbar support",
+                "Height and tilt adjustment",
+                "Supports up to 300 lbs",
+                "5-year warranty"
+            ],
+            affiliateLinks: {
+                amazon: "https://amazon.com",
+                flipkart: "https://flipkart.com"
+            },
+            price: "$399.99"
+        }
+    ];
+    
+    // ===== CATEGORIES =====
+    const CATEGORIES = [
+        "All Products",
+        "Kitchen Products",
+        "Electronics",
+        "Home Essentials",
+        "Beauty & Health",
+        "Fashion"
+    ];
+    
+    // ===== STORAGE FUNCTIONS =====
+    function initializeStorage() {
+        if (!localStorage.getItem('affiliateProducts')) {
+            localStorage.setItem('affiliateProducts', JSON.stringify(INITIAL_PRODUCTS));
+        }
+        loadProducts();
+    }
+    
+    function loadProducts() {
+        const stored = localStorage.getItem('affiliateProducts');
+        APP_STATE.products = stored ? JSON.parse(stored) : INITIAL_PRODUCTS;
+        APP_STATE.filteredProducts = [...APP_STATE.products];
+    }
+    
+    function saveProducts() {
+        localStorage.setItem('affiliateProducts', JSON.stringify(APP_STATE.products));
+    }
+    
+    // ===== AUTHENTICATION =====
+    function checkAuth() {
+        return localStorage.getItem('isAdminLoggedIn') === 'true';
+    }
+    
+    function login(username, password) {
+        // Simple authentication (in production, use secure backend)
+        if (username === 'admin' && password === 'admin123') {
+            localStorage.setItem('isAdminLoggedIn', 'true');
+            APP_STATE.isAdmin = true;
+            return true;
+        }
+        return false;
+    }
+    
+    function logout() {
+        localStorage.removeItem('isAdminLoggedIn');
+        APP_STATE.isAdmin = false;
+        navigateTo('home');
+    }
+    
+    // ===== NAVIGATION =====
+    function navigateTo(page, productId = null) {
+        APP_STATE.currentPage = page;
+        
+        // Update active nav link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        const navMap = {
+            'home': 'navHome',
+            'categories': 'navCategories',
+            'about': 'navAbout',
+            'blog': 'navBlog',
+            'contact': 'navContact',
+            'admin': 'navAdmin'
+        };
+        
+        const activeNav = document.getElementById(navMap[page]);
+        if (activeNav) activeNav.classList.add('active');
+        
+        // Render appropriate page
+        switch(page) {
+            case 'home':
+                renderHomePage();
+                break;
+            case 'product':
+                renderProductDetail(productId);
+                break;
+            case 'about':
+                renderAboutPage();
+                break;
+            case 'blog':
+                renderBlogPage();
+                break;
+            case 'contact':
+                renderContactPage();
+                break;
+            case 'admin':
+                if (checkAuth()) {
+                    renderAdminDashboard();
+                } else {
+                    renderAdminLogin();
+                }
+                break;
+            case 'privacy':
+                renderPrivacyPage();
+                break;
+            case 'disclaimer':
+                renderDisclaimerPage();
+                break;
+            case 'terms':
+                renderTermsPage();
+                break;
+            default:
+                render404Page();
+        }
+        
+        // Close mobile menu
+        document.getElementById('navMenu').classList.remove('active');
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+    
+    // ===== HOME PAGE =====
+    function renderHomePage() {
+        const app = document.getElementById('mainApp');
+        
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="search-container">
+                    <div class="container">
+                        <div class="search-bar">
+                            <input type="text" class="search-input" id="searchInput" placeholder="Search products...">
+                            <span class="search-icon">🔍</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="content-grid">
+                        <div class="product-feed">
+                            <div class="products-grid" id="productsGrid"></div>
+                            <div class="pagination" id="pagination"></div>
+                        </div>
+                        
+                        <aside class="sidebar">
+                            <div class="sidebar-section">
+                                <h3 class="sidebar-title">Categories</h3>
+                                <ul class="category-list" id="categoryList"></ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        renderCategories();
+        renderProducts();
+        setupSearch();
+    }
+    
+    function renderCategories() {
+        const categoryList = document.getElementById('categoryList');
+        if (!categoryList) return;
+        
+        categoryList.innerHTML = CATEGORIES.map(cat => `
+            <li class="category-item ${APP_STATE.currentCategory === cat.toLowerCase().replace(/\s+/g, '-') || (cat === 'All Products' && APP_STATE.currentCategory === 'all') ? 'active' : ''}" 
+                onclick="filterByCategory('${cat.toLowerCase().replace(/\s+/g, '-')}')">
+                ${cat}
+            </li>
+        `).join('');
+    }
+    
+    function renderProducts() {
+        const grid = document.getElementById('productsGrid');
+        if (!grid) return;
+        
+        // Apply filters
+        let filtered = [...APP_STATE.products];
+        
+        if (APP_STATE.currentCategory !== 'all') {
+            const catName = APP_STATE.currentCategory.replace(/-/g, ' ');
+            filtered = filtered.filter(p => 
+                p.category.toLowerCase() === catName
+            );
+        }
+        
+        if (APP_STATE.searchQuery) {
+            const query = APP_STATE.searchQuery.toLowerCase();
+            filtered = filtered.filter(p =>
+                p.title.toLowerCase().includes(query) ||
+                p.shortDescription.toLowerCase().includes(query) ||
+                p.category.toLowerCase().includes(query)
+            );
+        }
+        
+        APP_STATE.filteredProducts = filtered;
+        
+        // Pagination
+        const start = (APP_STATE.currentPage - 1) * APP_STATE.productsPerPage;
+        const end = start + APP_STATE.productsPerPage;
+        const paginatedProducts = filtered.slice(start, end);
+        
+        if (paginatedProducts.length === 0) {
+            grid.innerHTML = '<div class="loading">No products found</div>';
+            return;
+        }
+        
+        grid.innerHTML = paginatedProducts.map(product => `
+            <div class="product-card fade-in" onclick="navigateTo('product', ${product.id})">
+                <img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <span class="product-category">${product.category}</span>
+                    <h3 class="product-title">${product.title}</h3>
+                    <p class="product-description">${product.shortDescription}</p>
+                    <button class="btn btn-secondary">View Details</button>
+                </div>
+            </div>
+        `).join('');
+        
+        renderPagination();
+    }
+    
+    function renderPagination() {
+        const pagination = document.getElementById('pagination');
+        if (!pagination) return;
+        
+        const totalPages = Math.ceil(APP_STATE.filteredProducts.length / APP_STATE.productsPerPage);
+        
+        if (totalPages <= 1) {
+            pagination.innerHTML = '';
+            return;
+        }
+        
+        let html = '';
+        
+        if (APP_STATE.currentPage > 1) {
+            html += `<button class="page-btn" onclick="changePage(${APP_STATE.currentPage - 1})">Previous</button>`;
+        }
+        
+        for (let i = 1; i <= totalPages; i++) {
+            html += `<button class="page-btn ${i === APP_STATE.currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+        }
+        
+        if (APP_STATE.currentPage < totalPages) {
+            html += `<button class="page-btn" onclick="changePage(${APP_STATE.currentPage + 1})">Next</button>`;
+        }
+        
+        pagination.innerHTML = html;
+    }
+    
+    function changePage(page) {
+        APP_STATE.currentPage = page;
+        renderProducts();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function filterByCategory(category) {
+        APP_STATE.currentCategory = category === 'all-products' ? 'all' : category;
+        APP_STATE.currentPage = 1;
+        renderCategories();
+        renderProducts();
+    }
+    
+    function setupSearch() {
+        const searchInput = document.getElementById('searchInput');
+        if (!searchInput) return;
+        
+        searchInput.addEventListener('input', (e) => {
+            APP_STATE.searchQuery = e.target.value;
+            APP_STATE.currentPage = 1;
+            renderProducts();
+        });
+    }
+    
+    // ===== PRODUCT DETAIL PAGE =====
+    function renderProductDetail(productId) {
+        const product = APP_STATE.products.find(p => p.id === parseInt(productId));
+        
+        if (!product) {
+            render404Page();
+            return;
+        }
+        
+        const app = document.getElementById('mainApp');
+        
+        // Get related products
+        const relatedProducts = APP_STATE.products
+            .filter(p => p.category === product.category && p.id !== product.id)
+            .slice(0, 3);
+        
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="container">
+                    <div class="product-detail fade-in">
+                        <div class="detail-grid">
+                            <div class="image-gallery">
+                                <img src="${product.image}" alt="${product.title}" class="main-image">
+                            </div>
+                            
+                            <div class="detail-content">
+                                <span class="product-category">${product.category}</span>
+                                <h1>${product.title}</h1>
+                                <p>${product.fullDescription}</p>
+                                
+                                <h3>Key Features</h3>
+                                <ul class="features-list">
+                                    ${product.features.map(f => `<li>${f}</li>`).join('')}
+                                </ul>
+                                
+                                ${product.price ? `<h2 style="margin-top: 1.5rem;">${product.price}</h2>` : ''}
+                                
+                                <div class="affiliate-buttons">
+                                    ${product.affiliateLinks.amazon ? `<a href="${product.affiliateLinks.amazon}" target="_blank" class="btn btn-affiliate">Buy on Amazon</a>` : ''}
+                                    ${product.affiliateLinks.flipkart ? `<a href="${product.affiliateLinks.flipkart}" target="_blank" class="btn btn-affiliate">Buy on Flipkart</a>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        ${relatedProducts.length > 0 ? `
+                            <div class="related-products">
+                                <h3>Related Products</h3>
+                                <div class="products-grid">
+                                    ${relatedProducts.map(p => `
+                                        <div class="product-card" onclick="navigateTo('product', ${p.id})">
+                                            <img src="${p.image}" alt="${p.title}" class="product-image">
+                                            <div class="product-info">
+                                                <span class="product-category">${p.category}</span>
+                                                <h3 class="product-title">${p.title}</h3>
+                                                <p class="product-description">${p.shortDescription}</p>
+                                                <button class="btn btn-secondary">View Details</button>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ===== ABOUT PAGE =====
+    function renderAboutPage() {
+        const app = document.getElementById('mainApp');
+        
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="about-section">
+                    <div class="container">
+                        <div class="about-content fade-in">
+                            <h2>About AffiliateHub</h2>
+                            <p>Welcome to AffiliateHub, your trusted destination for honest and comprehensive product recommendations. We are passionate about helping you make informed purchasing decisions by providing detailed reviews, comparisons, and insights into the best products across various categories.</p>
+                            
+                            <p>Our team carefully curates and tests products to ensure we only recommend items that meet our high standards for quality, value, and functionality. We believe in transparency and authenticity, which is why we share both the pros and cons of every product we feature.</p>
+                            
+                            <p>As an affiliate marketing website, we earn commissions when you purchase products through our links. This allows us to continue providing free, valuable content to our readers. However, our recommendations are always based on genuine experience and research, never influenced by commission rates.</p>
+                            
+                            <p>Thank you for trusting AffiliateHub as your shopping companion. We're here to help you find exactly what you need.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ===== BLOG PAGE =====
+    function renderBlogPage() {
+        const app = document.getElementById('mainApp');
+        
+        const blogPosts = [
+            {
+                id: 1,
+                title: "10 Must-Have Kitchen Gadgets for 2026",
+                excerpt: "Discover the latest kitchen innovations that will transform your cooking experience.",
+                image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800",
+                date: "February 5, 2026",
+                category: "Kitchen"
+            },
+            {
+                id: 2,
+                title: "How to Choose the Perfect Headphones",
+                excerpt: "A comprehensive guide to finding headphones that match your lifestyle and preferences.",
+                image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800",
+                date: "February 3, 2026",
+                category: "Electronics"
+            },
+            {
+                id: 3,
+                title: "Smart Home Essentials for Beginners",
+                excerpt: "Start your smart home journey with these beginner-friendly devices and tips.",
+                image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=800",
+                date: "January 28, 2026",
+                category: "Home"
+            }
+        ];
+        
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="container">
+                    <div class="section text-center">
+                        <h1>Our Blog</h1>
+                        <p style="max-width: 700px; margin: 0 auto; color: var(--color-grey);">
+                            Expert advice, product reviews, and buying guides to help you make the best choices.
+                        </p>
+                    </div>
+                    
+                    <div class="blog-grid">
+                        ${blogPosts.map(post => `
+                            <article class="blog-card fade-in">
+                                <img src="${post.image}" alt="${post.title}" class="blog-image">
+                                <div class="blog-content">
+                                    <div class="blog-meta">${post.date} • ${post.category}</div>
+                                    <h3 class="blog-title">${post.title}</h3>
+                                    <p class="blog-excerpt">${post.excerpt}</p>
+                                    <button class="btn btn-secondary">Read More</button>
+                                </div>
+                            </article>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ===== CONTACT PAGE =====
+    function renderContactPage() {
+        const app = document.getElementById('mainApp');
+        
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="container">
+                    <div class="section contact-section fade-in">
+                        <h2 class="text-center">Get In Touch</h2>
+                        <p class="text-center" style="color: var(--color-grey); margin-bottom: 2rem;">
+                            Have questions or suggestions? We'd love to hear from you.
+                        </p>
+                        
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-textarea" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        e.target.reset();
+    }
+    
+    // ===== ADMIN LOGIN =====
+    function renderAdminLogin() {
+        const app = document.getElementById('mainApp');
+        
+        app.innerHTML = `
+            <div class="admin-login">
+                <div class="login-box fade-in">
+                    <h2>Admin Login</h2>
+                    <form id="loginForm" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-input" id="username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" id="password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    </form>
+                    
+                    <p style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--color-grey);">
+                        Default: admin / admin123
+                    </p>
+                </div>
+            </div>
+        `;
+    }
+    
+    function handleLogin(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        if (login(username, password)) {
+            renderAdminDashboard();
+        } else {
+            alert('Invalid credentials');
+        }
+    }
+    
+    // ===== ADMIN DASHBOARD =====
+    function renderAdminDashboard() {
+        const app = document.getElementById('mainApp');
+        
+        app.innerHTML = `
+            <div class="admin-dashboard">
+                <div class="admin-header">
+                    <div class="container">
+                        <div class="admin-nav">
+                            <h2>Admin Dashboard</h2>
+                            <button class="btn btn-primary btn-small" onclick="showAddProductModal()">Add New Product</button>
+                            <button class="btn btn-secondary btn-small" onclick="logout()">Logout</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="admin-content fade-in">
+                        <h3>Manage Products</h3>
+                        
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${APP_STATE.products.map(product => `
+                                    <tr>
+                                        <td><img src="${product.image}" alt="${product.title}"></td>
+                                        <td>${product.title}</td>
+                                        <td>${product.category}</td>
+                                        <td>${product.price || 'N/A'}</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-edit btn-small" onclick="editProduct(${product.id})">Edit</button>
+                                                <button class="btn btn-delete btn-small" onclick="deleteProduct(${product.id})">Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ===== PRODUCT MANAGEMENT =====
+    function showAddProductModal() {
+        showProductModal();
+    }
+    
+    function showProductModal(productId = null) {
+        const product = productId ? APP_STATE.products.find(p => p.id === productId) : null;
+        const isEdit = !!product;
+        
+        const modal = document.getElementById('productModal');
+        const modalBody = document.getElementById('modalBody');
+        
+        modalBody.innerHTML = `
+            <form id="productForm" onsubmit="handleProductSubmit(event, ${isEdit ? productId : 'null'})">
+                <div class="form-group">
+                    <label class="form-label">Product Title</label>
+                    <input type="text" class="form-input" id="productTitle" value="${product?.title || ''}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-select" id="productCategory" required>
+                        ${CATEGORIES.slice(1).map(cat => `
+                            <option value="${cat}" ${product?.category === cat ? 'selected' : ''}>${cat}</option>
+                        `).join('')}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Image URL</label>
+                    <input type="url" class="form-input" id="productImage" value="${product?.image || ''}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Short Description</label>
+                    <textarea class="form-textarea" id="productShortDesc" required>${product?.shortDescription || ''}</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Full Description</label>
+                    <textarea class="form-textarea" id="productFullDesc" required>${product?.fullDescription || ''}</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Features (one per line)</label>
+                    <textarea class="form-textarea" id="productFeatures">${product?.features?.join('\n') || ''}</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Price (optional)</label>
+                    <input type="text" class="form-input" id="productPrice" value="${product?.price || ''}">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Amazon Link</label>
+                    <input type="url" class="form-input" id="amazonLink" value="${product?.affiliateLinks?.amazon || ''}">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Flipkart Link</label>
+                    <input type="url" class="form-input" id="flipkartLink" value="${product?.affiliateLinks?.flipkart || ''}">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">${isEdit ? 'Update' : 'Add'} Product</button>
+            </form>
+        `;
+        
+        modal.classList.add('active');
+    }
+    
+    function handleProductSubmit(e, productId) {
+        e.preventDefault();
+        
+        const productData = {
+            id: productId || Date.now(),
+            title: document.getElementById('productTitle').value,
+            category: document.getElementById('productCategory').value,
+            image: document.getElementById('productImage').value,
+            shortDescription: document.getElementById('productShortDesc').value,
+            fullDescription: document.getElementById('productFullDesc').value,
+            features: document.getElementById('productFeatures').value.split('\n').filter(f => f.trim()),
+            price: document.getElementById('productPrice').value,
+            affiliateLinks: {
+                amazon: document.getElementById('amazonLink').value,
+                flipkart: document.getElementById('flipkartLink').value
+            }
+        };
+        
+        if (productId) {
+            // Update existing product
+            const index = APP_STATE.products.findIndex(p => p.id === productId);
+            APP_STATE.products[index] = productData;
+        } else {
+            // Add new product
+            APP_STATE.products.unshift(productData);
+        }
+        
+        saveProducts();
+        closeModal();
+        renderAdminDashboard();
+        alert('Product saved successfully!');
+    }
+    
+    function editProduct(productId) {
+        showProductModal(productId);
+    }
+    
+    function deleteProduct(productId) {
+        if (confirm('Are you sure you want to delete this product?')) {
+            APP_STATE.products = APP_STATE.products.filter(p => p.id !== productId);
+            saveProducts();
+            renderAdminDashboard();
+        }
+    }
+    
+    // ===== LEGAL PAGES =====
+    function renderPrivacyPage() {
+        const app = document.getElementById('mainApp');
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="container">
+                    <div class="section contact-section fade-in">
+                        <h1>Privacy Policy</h1>
+                        <p>Last updated: February 10, 2026</p>
+                        <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information...</p>
+                        <h3>Information We Collect</h3>
+                        <p>We collect information that you provide directly to us, including when you subscribe to our newsletter or contact us.</p>
+                        <h3>How We Use Your Information</h3>
+                        <p>We use the information we collect to provide, maintain, and improve our services, and to communicate with you.</p>
+                        <h3>Cookies</h3>
+                        <p>We use cookies and similar technologies to enhance your browsing experience and analyze site traffic.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function renderDisclaimerPage() {
+        const app = document.getElementById('mainApp');
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="container">
+                    <div class="section contact-section fade-in">
+                        <h1>Affiliate Disclaimer</h1>
+                        <p>Last updated: February 10, 2026</p>
+                        <p>AffiliateHub is a participant in various affiliate advertising programs designed to provide a means for sites to earn advertising fees by advertising and linking to merchant websites.</p>
+                        <h3>Affiliate Relationships</h3>
+                        <p>We maintain affiliate relationships with Amazon, Flipkart, and other retailers. When you click on links to various merchants on this site and make a purchase, this can result in us earning a commission.</p>
+                        <h3>Product Recommendations</h3>
+                        <p>Our product recommendations are based on genuine research and testing. We only recommend products we believe will provide value to our readers.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    function renderTermsPage() {
+        const app = document.getElementById('mainApp');
+        app.innerHTML = `
+            <div class="main-content">
+                <div class="container">
+                    <div class="section contact-section fade-in">
+                        <h1>Terms & Conditions</h1>
+                        <p>Last updated: February 10, 2026</p>
+                        <h3>Acceptance of Terms</h3>
+                        <p>By accessing and using this website, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+                        <h3>Use License</h3>
+                        <p>Permission is granted to temporarily download one copy of the materials on AffiliateHub's website for personal, non-commercial transitory viewing only.</p>
+                        <h3>Disclaimer</h3>
+                        <p>The materials on AffiliateHub's website are provided on an 'as is' basis. We make no warranties, expressed or implied.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ===== 404 PAGE =====
+    function render404Page() {
+        const app = document.getElementById('mainApp');
+        app.innerHTML = `
+            <div class="error-page">
+                <div class="error-content fade-in">
+                    <h1>404</h1>
+                    <h2>Page Not Found</h2>
+                    <p>The page you're looking for doesn't exist.</p>
+                    <button class="btn btn-primary" onclick="navigateTo('home')">Go Home</button>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ===== MODAL FUNCTIONS =====
+    function closeModal() {
+        document.getElementById('productModal').classList.remove('active');
+    }
+    
+    // ===== HEADER SCROLL EFFECT =====
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // ===== MOBILE MENU =====
+    document.getElementById('mobileMenuToggle').addEventListener('click', () => {
+        const menu = document.getElementById('navMenu');
+        const toggle = document.getElementById('mobileMenuToggle');
+        menu.classList.toggle('active');
+        toggle.classList.toggle('active');
+    });
+    
+    // ===== NAVIGATION EVENTS =====
+    document.getElementById('navHome').addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('home');
+    });
+    
+    document.getElementById('navCategories').addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('home');
+        setTimeout(() => {
+            document.querySelector('.sidebar')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+    });
+    
+    document.getElementById('navAbout').addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('about');
+    });
+    
+    document.getElementById('navBlog').addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('blog');
+    });
+    
+    document.getElementById('navContact').addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('contact');
+    });
+    
+    document.getElementById('navAdmin').addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('admin');
+    });
+    
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    
+    // Close modal on outside click
+    document.getElementById('productModal').addEventListener('click', (e) => {
+        if (e.target.id === 'productModal') {
+            closeModal();
+        }
+    });
+    
+    // ===== FOOTER LINKS =====
+    document.addEventListener('click', (e) => {
+        if (e.target.matches('a[href="#privacy"]')) {
+            e.preventDefault();
+            navigateTo('privacy');
+        } else if (e.target.matches('a[href="#disclaimer"]')) {
+            e.preventDefault();
+            navigateTo('disclaimer');
+        } else if (e.target.matches('a[href="#terms"]')) {
+            e.preventDefault();
+            navigateTo('terms');
+        }
+    });
+    
+    // ===== INITIALIZATION =====
+    function init() {
+        initializeStorage();
+        APP_STATE.isAdmin = checkAuth();
+        navigateTo('home');
+    }
+    
+    // Start the app
+    init();
+    
+    //]]>
+    </script>
+</body>
+</html>

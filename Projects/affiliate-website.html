@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated — Premium Product Recommendations</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================================================
+           CURATED - AFFILIATE BLOG WEBSITE
+           Refined Editorial Aesthetic
+        ================================================ */
+        
+        :root {
+            /* Neutral Color Palette */
+            --color-ivory: #FDFCF9;
+            --color-warm-white: #F8F6F1;
+            --color-sand: #EBE6DD;
+            --color-stone: #CCC5B9;
+            --color-charcoal: #403D39;
+            --color-deep-charcoal: #252422;
+            --color-black: #1A1816;
+            --color-accent: #8B7355;
+            
+            /* Typography */
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 5rem;
+            
+            /* Effects */
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 30px rgba(0,0,0,0.1);
+            --shadow-strong: 0 12px 40px rgba(0,0,0,0.15);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-charcoal);
+            background: var(--color-ivory);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--color-black);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+        }
+        
+        h1 { 
+            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            font-weight: 300;
+            line-height: 1.1;
+        }
+        
+        h2 { 
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 400;
+        }
+        
+        h3 { 
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+        }
+        
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        h6 { font-size: 1rem; }
+        
+        p {
+            margin-bottom: var(--space-sm);
+            color: var(--color-charcoal);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        /* ===== HEADER ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(253, 252, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-sand);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .site-header.scrolled {
+            box-shadow: var(--shadow-soft);
+            background: rgba(253, 252, 249, 0.98);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--color-black);
+            text-transform: uppercase;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-charcoal);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background: var(--color-black);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            width: 100%;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-black);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-black);
+            transition: var(--transition);
+        }
+        
+        .mobile-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-ivory) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(139, 115, 85, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(64, 61, 57, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            margin-bottom: var(--space-md);
+            font-weight: 300;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-charcoal);
+            max-width: 700px;
+            margin: 0 auto var(--space-lg);
+            line-height: 1.8;
+        }
+        
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--color-accent);
+            margin: var(--space-lg) auto;
+        }
+        
+        /* ===== SEARCH BAR ===== */
+        .search-section {
+            padding: var(--space-lg) 0;
+            background: var(--color-warm-white);
+        }
+        
+        .search-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1.25rem 4rem 1.25rem 1.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid var(--color-sand);
+            background: var(--color-ivory);
+            color: var(--color-black);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(139, 115, 85, 0.1);
+        }
+        
+        .search-input::placeholder {
+            color: var(--color-stone);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+            color: var(--color-stone);
+            pointer-events: none;
+        }
+        
+        /* ===== MAIN LAYOUT ===== */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: var(--space-xl);
+            padding: var(--space-xl) 0;
+        }
+        
+        /* ===== PRODUCT GRID ===== */
+        .products-section {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .product-card {
+            background: var(--color-warm-white);
+            border-radius: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .product-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: var(--color-sand);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        .product-category-badge {
+            position: absolute;
+            top: var(--space-sm);
+            left: var(--space-sm);
+            background: rgba(253, 252, 249, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.4rem 0.9rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-charcoal);
+        }
+        
+        .product-info {
+            padding: var(--space-md);
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--color-black);
+            font-family: var(--font-display);
+        }
+        
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--color-charcoal);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--color-black);
+            color: var(--color-ivory);
+            border: 2px solid var(--color-black);
+        }
+        
+        .btn-primary:hover {
+            background: var(--color-charcoal);
+            border-color: var(--color-charcoal);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-black);
+            border: 2px solid var(--color-black);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-black);
+            color: var(--color-ivory);
+        }
+        
+        .btn-affiliate {
+            background: var(--color-accent);
+            color: var(--color-ivory);
+            border: 2px solid var(--color-accent);
+        }
+        
+        .btn-affiliate:hover {
+            background: var(--color-charcoal);
+            border-color: var(--color-charcoal);
+        }
+        
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            animation: fadeInRight 0.8s ease-out;
+        }
+        
+        .sidebar-section {
+            background: var(--color-warm-white);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            border: 1px solid var(--color-sand);
+        }
+        
+        .sidebar-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            font-family: var(--font-display);
+            letter-spacing: 0.02em;
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-item {
+            padding: 0.875rem var(--space-sm);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+            color: var(--color-charcoal);
+        }
+        
+        .category-item:hover {
+            color: var(--color-black);
+            border-left-color: var(--color-accent);
+            padding-left: var(--space-md);
+        }
+        
+        .category-item.active {
+            color: var(--color-black);
+            font-weight: 600;
+            border-left-color: var(--color-black);
+            background: rgba(139, 115, 85, 0.05);
+        }
+        
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-lg) 0;
+        }
+        
+        .page-btn {
+            min-width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-warm-white);
+            color: var(--color-charcoal);
+            border: 1px solid var(--color-sand);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .page-btn:hover,
+        .page-btn.active {
+            background: var(--color-black);
+            color: var(--color-ivory);
+            border-color: var(--color-black);
+        }
+        
+        /* ===== PRODUCT DETAIL ===== */
+        .product-detail {
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .detail-image-wrapper {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+        
+        .detail-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            background: var(--color-sand);
+        }
+        
+        .detail-content {
+            padding: var(--space-md) 0;
+        }
+        
+        .detail-category {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .detail-title {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            font-weight: 400;
+        }
+        
+        .detail-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .features-title {
+            font-size: 1.5rem;
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .features-list li {
+            padding: var(--space-sm) 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.7;
+            border-bottom: 1px solid var(--color-sand);
+        }
+        
+        .features-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        .price {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--color-black);
+            margin: var(--space-md) 0;
+        }
+        
+        .affiliate-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        
+        .related-section {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--color-sand);
+        }
+        
+        .related-section h3 {
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            padding: var(--space-xl) 0;
+            background: var(--color-warm-white);
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content h2 {
+            margin-bottom: var(--space-md);
+        }
+        
+        .about-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--color-charcoal);
+            margin-bottom: var(--space-md);
+        }
+        
+        /* ===== BLOG SECTION ===== */
+        .blog-section {
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-charcoal);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .blog-card {
+            background: var(--color-warm-white);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: var(--color-sand);
+        }
+        
+        .blog-content {
+            padding: var(--space-lg);
+        }
+        
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--color-stone);
+            margin-bottom: var(--space-sm);
+            letter-spacing: 0.05em;
+        }
+        
+        .blog-title {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-display);
+        }
+        
+        .blog-excerpt {
+            color: var(--color-charcoal);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+        
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+        }
+        
+        .contact-form {
+            max-width: 700px;
+            margin: var(--space-xl) auto 0;
+            background: var(--color-warm-white);
+            padding: var(--space-xl);
+            border: 1px solid var(--color-sand);
+        }
+        
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-xs);
+            color: var(--color-black);
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 1rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid var(--color-sand);
+            background: var(--color-ivory);
+            color: var(--color-black);
+            transition: var(--transition);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 4px rgba(139, 115, 85, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+            font-family: inherit;
+        }
+        
+        /* ===== ADMIN SECTION ===== */
+        .admin-login {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+        }
+        
+        .login-box {
+            background: var(--color-warm-white);
+            padding: var(--space-xl);
+            max-width: 450px;
+            width: 100%;
+            box-shadow: var(--shadow-strong);
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .admin-dashboard {
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+        }
+        
+        .admin-header {
+            background: var(--color-warm-white);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-sand);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .admin-actions {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .admin-content {
+            background: var(--color-warm-white);
+            padding: var(--space-xl);
+            border: 1px solid var(--color-sand);
+        }
+        
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-lg);
+        }
+        
+        .admin-table th,
+        .admin-table td {
+            padding: var(--space-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--color-sand);
+        }
+        
+        .admin-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            background: var(--color-sand);
+        }
+        
+        .admin-table img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+        
+        .action-btns {
+            display: flex;
+            gap: var(--space-xs);
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+        
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md);
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--color-ivory);
+            padding: var(--space-xl);
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-strong);
+            animation: modalSlideIn 0.4s ease-out;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-sand);
+        }
+        
+        .close-modal {
+            font-size: 2rem;
+            color: var(--color-stone);
+            cursor: pointer;
+            line-height: 1;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            color: var(--color-black);
+        }
+        
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--color-deep-charcoal);
+            color: var(--color-sand);
+            padding: var(--space-xl) 0 var(--space-md);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-section h4 {
+            color: var(--color-ivory);
+            margin-bottom: var(--space-md);
+            font-family: var(--font-display);
+        }
+        
+        .footer-section p {
+            line-height: 1.8;
+            color: var(--color-stone);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .footer-links a {
+            color: var(--color-stone);
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-ivory);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-charcoal);
+            color: var(--color-ivory);
+            border: 1px solid var(--color-charcoal);
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--color-charcoal);
+            color: var(--color-stone);
+            font-size: 0.9rem;
+        }
+        
+        /* ===== 404 PAGE ===== */
+        .error-page {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .error-content h1 {
+            font-size: 8rem;
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+        }
+        
+        /* ===== LEGAL PAGES ===== */
+        .legal-page {
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+        }
+        
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-warm-white);
+            padding: var(--space-xl);
+            border: 1px solid var(--color-sand);
+        }
+        
+        .legal-content h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== UTILITIES ===== */
+        .hidden {
+            display: none !important;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: var(--space-xl);
+            color: var(--color-stone);
+            font-style: italic;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-image-wrapper {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --space-xl: 3rem;
+                --space-lg: 2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--color-ivory);
+                flex-direction: column;
+                padding: var(--space-lg);
+                gap: var(--space-md);
+                transition: left 0.4s ease;
+                border-top: 1px solid var(--color-sand);
+                align-items: flex-start;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-title {
+                font-size: 2rem;
+            }
+            
+            .error-content h1 {
+                font-size: 5rem;
+            }
+            
+            .affiliate-buttons {
+                flex-direction: column;
+            }
+            
+            .affiliate-buttons .btn {
+                width: 100%;
+            }
+            
+            .admin-table {
+                font-size: 0.85rem;
+            }
+            
+            .admin-table img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                gap: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="navigateTo('home'); return false;">CURATED</a>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#" onclick="navigateTo('home'); return false;" class="active">Home</a></li>
+                        <li><a href="#" onclick="scrollToCategories(); return false;">Categories</a></li>
+                        <li><a href="#" onclick="navigateTo('about'); return false;">About</a></li>
+                        <li><a href="#" onclick="navigateTo('blog'); return false;">Blog</a></li>
+                        <li><a href="#" onclick="navigateTo('contact'); return false;">Contact</a></li>
+                        <li><a href="#" onclick="navigateTo('admin'); return false;">Admin</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN APP CONTAINER -->
+    <main id="app"></main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Curated</h4>
+                    <p>A refined collection of premium product recommendations. We carefully select and review exceptional products to help you discover items worth owning.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">i</a>
+                        <a href="#" class="social-icon">p</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="navigateTo('home'); return false;">Home</a></li>
+                        <li><a href="#" onclick="navigateTo('about'); return false;">About</a></li>
+                        <li><a href="#" onclick="navigateTo('blog'); return false;">Blog</a></li>
+                        <li><a href="#" onclick="navigateTo('contact'); return false;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="navigateTo('privacy'); return false;">Privacy Policy</a></li>
+                        <li><a href="#" onclick="navigateTo('disclaimer'); return false;">Affiliate Disclaimer</a></li>
+                        <li><a href="#" onclick="navigateTo('terms'); return false;">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for curated recommendations and exclusive updates.</p>
+                    <form onsubmit="handleNewsletter(event)">
+                        <input type="email" class="form-input" placeholder="your@email.com" required style="margin-top: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Curated. All rights reserved. As an Amazon Associate, we earn from qualifying purchases.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // ================================================
+        //  CURATED - AFFILIATE BLOG APPLICATION
+        //  Complete JavaScript Functionality
+        // ================================================
+        
+        // STATE MANAGEMENT
+        const STATE = {
+            currentPage: 'home',
+            products: [],
+            filteredProducts: [],
+            currentCategory: 'all',
+            searchQuery: '',
+            isAdmin: false,
+            currentProductId: null,
+            pagination: {
+                currentPage: 1,
+                perPage: 9
+            }
+        };
+        
+        // INITIAL PRODUCTS DATA
+        const INITIAL_PRODUCTS = [
+            {
+                id: 1,
+                title: "Artisan Cast Iron Cookware Set",
+                shortDescription: "Heirloom-quality cast iron pieces that improve with age. Professional-grade heat retention for restaurant-quality results.",
+                fullDescription: "Experience the timeless art of cast iron cooking with this meticulously crafted cookware set. Each piece is hand-finished and pre-seasoned with organic flaxseed oil, creating a natural non-stick surface that deepens with every use. The superior heat retention ensures even cooking, while the elegant design transitions seamlessly from stovetop to oven to table.",
+                image: "https://images.unsplash.com/photo-1584990347449-39b4aa457c4c?w=800&q=80",
+                category: "Kitchen Products",
+                features: [
+                    "Hand-crafted heirloom quality",
+                    "Pre-seasoned with organic oils",
+                    "Superior heat retention",
+                    "Oven safe to 500°F",
+                    "Lifetime warranty"
+                ],
+                affiliateLinks: {
+                    amazon: "https://amazon.com",
+                    flipkart: "https://flipkart.com"
+                },
+                price: "$349.99"
+            },
+            {
+                id: 2,
+                title: "Premium Noise-Cancelling Headphones",
+                shortDescription: "Studio-grade audio with adaptive noise cancellation. Immerse yourself in pure, uncompromised sound.",
+                fullDescription: "Engineered for audiophiles and professionals, these headphones deliver an unparalleled listening experience. The adaptive noise cancellation technology learns your environment and adjusts in real-time, while custom-tuned 45mm drivers produce crystalline highs and deep, controlled bass. Premium materials and ergonomic design ensure all-day comfort.",
+                image: "https://images.unsplash.com/photo-1545127398-14699f92334b?w=800&q=80",
+                category: "Electronics",
+                features: [
+                    "Adaptive noise cancellation",
+                    "35-hour battery life",
+                    "Premium leather and aluminum",
+                    "Studio-grade audio drivers",
+                    "Multi-device connectivity"
+                ],
+                affiliateLinks: {
+                    amazon: "https://amazon.com",
+                    flipkart: "https://flipkart.com"
+                },
+                price: "$399.99"
+            },
+            {
+                id: 3,
+                title: "Intelligent Robot Vacuum",
+                shortDescription: "AI-powered cleaning with laser precision mapping. Effortless maintenance for the modern home.",
+                fullDescription: "Transform your cleaning routine with this sophisticated robotic vacuum. Advanced LiDAR navigation creates detailed floor plans, optimizing cleaning paths for maximum efficiency. The powerful motor handles everything from hardwood to deep carpets, while the auto-empty base means weeks of hands-free operation. Control everything from your smartphone.",
+                image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=800&q=80",
+                category: "Home Essentials",
+                features: [
+                    "LiDAR precision mapping",
+                    "60-day auto-empty base",
+                    "Smart home integration",
+                    "Multi-floor mapping",
+                    "HEPA filtration system"
+                ],
+                affiliateLinks: {
+                    amazon: "https://amazon.com",
+                    flipkart: "https://flipkart.com"
+                },
+                price: "$649.99"
+            },
+            {
+                id: 4,
+                title: "Luxury Botanical Skincare Collection",
+                shortDescription: "Plant-powered formulations with clinically proven results. Sustainable luxury for radiant skin.",
+                fullDescription: "Elevate your skincare ritual with this exquisite collection of botanical formulations. Each product harnesses the power of rare plant extracts and cutting-edge peptides, clinically proven to improve skin texture, tone, and luminosity. Housed in beautiful glass packaging, this collection represents the perfect marriage of nature and science.",
+                image: "https://images.unsplash.com/photo-1556229010-aa9e36d00f36?w=800&q=80",
+                category: "Beauty & Health",
+                features: [
+                    "Rare botanical extracts",
+                    "Clinically proven formulas",
+                    "Sustainable packaging",
+                    "Cruelty-free and vegan",
+                    "Dermatologist developed"
+                ],
+                affiliateLinks: {
+                    amazon: "https://amazon.com",
+                    flipkart: "https://flipkart.com"
+                },
+                price: "$179.99"
+            },
+            {
+                id: 5,
+                title: "Italian Leather Crossbody Bag",
+                shortDescription: "Timeless elegance in vegetable-tanned leather. Handcrafted by Tuscan artisans.",
+                fullDescription: "This exquisite crossbody bag represents the pinnacle of Italian leather craftsmanship. Made from premium vegetable-tanned leather that develops a unique patina over time, each bag is hand-stitched by master artisans in Tuscany. The minimalist design conceals thoughtfully organized compartments, while the adjustable strap ensures comfortable wear.",
+                image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",
+                category: "Fashion",
+                features: [
+                    "Tuscan artisan crafted",
+                    "Vegetable-tanned leather",
+                    "RFID-protected compartments",
+                    "Develops unique patina",
+                    "Lifetime repair service"
+                ],
+                affiliateLinks: {
+                    amazon: "https://amazon.com",
+                    flipkart: "https://flipkart.com"
+                },
+                price: "$425.99"
+            },
+            {
+                id: 6,
+                title: "Architect's Office Chair",
+                shortDescription: "Scandinavian design meets orthopedic excellence. Where form and function unite perfectly.",
+                fullDescription: "Designed in collaboration with leading ergonomists and architects, this office chair represents the ultimate fusion of aesthetics and wellness. The suspended mesh back provides dynamic support that moves with you, while precision controls allow complete customization of your seating position. Every detail, from the die-cast aluminum base to the hand-stitched leather armrests, reflects uncompromising quality.",
+                image: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=800&q=80",
+                category: "Home Essentials",
+                features: [
+                    "Orthopedic suspension system",
+                    "Scandinavian design aesthetic",
+                    "Precision adjustment controls",
+                    "Premium materials throughout",
+                    "12-year manufacturer warranty"
+                ],
+                affiliateLinks: {
+                    amazon: "https://amazon.com",
+                    flipkart: "https://flipkart.com"
+                },
+                price: "$899.99"
+            }
+        ];
+        
+        // CATEGORIES
+        const CATEGORIES = [
+            { id: 'all', name: 'All Products' },
+            { id: 'kitchen-products', name: 'Kitchen Products' },
+            { id: 'electronics', name: 'Electronics' },
+            { id: 'home-essentials', name: 'Home Essentials' },
+            { id: 'beauty-health', name: 'Beauty & Health' },
+            { id: 'fashion', name: 'Fashion' }
+        ];
+        
+        // ================================================
+        // STORAGE FUNCTIONS
+        // ================================================
+        
+        function initStorage() {
+            if (!localStorage.getItem('curatedProducts')) {
+                localStorage.setItem('curatedProducts', JSON.stringify(INITIAL_PRODUCTS));
+            }
+            loadProducts();
+        }
+        
+        function loadProducts() {
+            const stored = localStorage.getItem('curatedProducts');
+            STATE.products = stored ? JSON.parse(stored) : INITIAL_PRODUCTS;
+            STATE.filteredProducts = [...STATE.products];
+        }
+        
+        function saveProducts() {
+            localStorage.setItem('curatedProducts', JSON.stringify(STATE.products));
+        }
+        
+        // ================================================
+        // AUTHENTICATION
+        // ================================================
+        
+        function checkAuth() {
+            return localStorage.getItem('curatedAdmin') === 'true';
+        }
+        
+        function login(username, password) {
+            if (username === 'admin' && password === 'admin123') {
+                localStorage.setItem('curatedAdmin', 'true');
+                STATE.isAdmin = true;
+                return true;
+            }
+            return false;
+        }
+        
+        function logout() {
+            localStorage.removeItem('curatedAdmin');
+            STATE.isAdmin = false;
+            navigateTo('home');
+        }
+        
+        // ================================================
+        // NAVIGATION
+        // ================================================
+        
+        function navigateTo(page, id = null) {
+            STATE.currentPage = page;
+            STATE.currentProductId = id;
+            
+            // Update nav active state
+            document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+            
+            // Close mobile menu
+            document.getElementById('navMenu').classList.remove('active');
+            document.getElementById('mobileToggle').classList.remove('active');
+            
+            // Render page
+            switch(page) {
+                case 'home':
+                    renderHome();
+                    break;
+                case 'product':
+                    renderProductDetail(id);
+                    break;
+                case 'about':
+                    renderAbout();
+                    break;
+                case 'blog':
+                    renderBlog();
+                    break;
+                case 'contact':
+                    renderContact();
+                    break;
+                case 'admin':
+                    if (checkAuth()) {
+                        renderAdminDashboard();
+                    } else {
+                        renderAdminLogin();
+                    }
+                    break;
+                case 'privacy':
+                    renderPrivacy();
+                    break;
+                case 'disclaimer':
+                    renderDisclaimer();
+                    break;
+                case 'terms':
+                    renderTerms();
+                    break;
+                default:
+                    render404();
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function scrollToCategories() {
+            navigateTo('home');
+            setTimeout(() => {
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar) {
+                    sidebar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        }
+        
+        // ================================================
+        // HOME PAGE
+        // ================================================
+        
+        function renderHome() {
+            const app = document.getElementById('app');
+            
+            app.innerHTML = `
+                <section class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1>Thoughtfully Curated Products</h1>
+                            <div class="hero-divider"></div>
+                            <p>Discover exceptional items worth owning. Each product is carefully selected for quality, design, and lasting value.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="search-section">
+                    <div class="container">
+                        <div class="search-wrapper">
+                            <input type="text" class="search-input" id="searchInput" placeholder="Search for products...">
+                            <span class="search-icon">⌕</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="container">
+                    <div class="main-layout">
+                        <div class="products-section">
+                            <div class="products-grid" id="productsGrid"></div>
+                            <div class="pagination" id="pagination"></div>
+                        </div>
+                        
+                        <aside class="sidebar">
+                            <div class="sidebar-section">
+                                <h3 class="sidebar-title">Categories</h3>
+                                <ul class="category-list" id="categoryList"></ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                
+                <section class="about-section">
+                    <div class="container">
+                        <div class="about-content">
+                            <h2>Our Philosophy</h2>
+                            <p>We believe in quality over quantity. Every product featured on Curated has been personally evaluated for craftsmanship, durability, and timeless design. We showcase items that enhance daily life and stand the test of time.</p>
+                        </div>
+                    </div>
+                </section>
+            `;
+            
+            renderCategories();
+            renderProducts();
+            setupSearch();
+        }
+        
+        function renderCategories() {
+            const list = document.getElementById('categoryList');
+            if (!list) return;
+            
+            list.innerHTML = CATEGORIES.map(cat => `
+                <li class="category-item ${STATE.currentCategory === cat.id ? 'active' : ''}" 
+                    onclick="filterCategory('${cat.id}')">
+                    ${cat.name}
+                </li>
+            `).join('');
+        }
+        
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            if (!grid) return;
+            
+            // Filter products
+            let filtered = [...STATE.products];
+            
+            if (STATE.currentCategory !== 'all') {
+                const catName = CATEGORIES.find(c => c.id === STATE.currentCategory)?.name;
+                filtered = filtered.filter(p => p.category === catName);
+            }
+            
+            if (STATE.searchQuery) {
+                const query = STATE.searchQuery.toLowerCase();
+                filtered = filtered.filter(p =>
+                    p.title.toLowerCase().includes(query) ||
+                    p.shortDescription.toLowerCase().includes(query) ||
+                    p.category.toLowerCase().includes(query)
+                );
+            }
+            
+            STATE.filteredProducts = filtered;
+            
+            // Pagination
+            const { currentPage, perPage } = STATE.pagination;
+            const start = (currentPage - 1) * perPage;
+            const end = start + perPage;
+            const paginated = filtered.slice(start, end);
+            
+            if (paginated.length === 0) {
+                grid.innerHTML = '<div class="loading">No products found</div>';
+                renderPagination();
+                return;
+            }
+            
+            grid.innerHTML = paginated.map(product => `
+                <article class="product-card" onclick="navigateTo('product', ${product.id})">
+                    <div class="product-image-wrapper">
+                        <img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy">
+                        <span class="product-category-badge">${product.category}</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-description">${product.shortDescription}</p>
+                        <button class="btn btn-secondary">View Details</button>
+                    </div>
+                </article>
+            `).join('');
+            
+            renderPagination();
+        }
+        
+        function renderPagination() {
+            const pagination = document.getElementById('pagination');
+            if (!pagination) return;
+            
+            const totalPages = Math.ceil(STATE.filteredProducts.length / STATE.pagination.perPage);
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            
+            let html = '';
+            const current = STATE.pagination.currentPage;
+            
+            if (current > 1) {
+                html += `<button class="page-btn" onclick="changePage(${current - 1})">Previous</button>`;
+            }
+            
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button class="page-btn ${i === current ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+            }
+            
+            if (current < totalPages) {
+                html += `<button class="page-btn" onclick="changePage(${current + 1})">Next</button>`;
+            }
+            
+            pagination.innerHTML = html;
+        }
+        
+        function changePage(page) {
+            STATE.pagination.currentPage = page;
+            renderProducts();
+            document.getElementById('productsGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function filterCategory(catId) {
+            STATE.currentCategory = catId;
+            STATE.pagination.currentPage = 1;
+            renderCategories();
+            renderProducts();
+        }
+        
+        function setupSearch() {
+            const input = document.getElementById('searchInput');
+            if (!input) return;
+            
+            input.addEventListener('input', (e) => {
+                STATE.searchQuery = e.target.value;
+                STATE.pagination.currentPage = 1;
+                renderProducts();
+            });
+        }
+        
+        // ================================================
+        // PRODUCT DETAIL PAGE
+        // ================================================
+        
+        function renderProductDetail(id) {
+            const product = STATE.products.find(p => p.id === parseInt(id));
+            if (!product) {
+                render404();
+                return;
+            }
+            
+            const related = STATE.products
+                .filter(p => p.category === product.category && p.id !== product.id)
+                .slice(0, 3);
+            
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="product-detail">
+                    <div class="container">
+                        <div class="detail-grid">
+                            <div class="detail-image-wrapper">
+                                <img src="${product.image}" alt="${product.title}" class="detail-image">
+                            </div>
+                            
+                            <div class="detail-content">
+                                <div class="detail-category">${product.category}</div>
+                                <h1 class="detail-title">${product.title}</h1>
+                                <p class="detail-description">${product.fullDescription}</p>
+                                
+                                <h3 class="features-title">Key Features</h3>
+                                <ul class="features-list">
+                                    ${product.features.map(f => `<li>${f}</li>`).join('')}
+                                </ul>
+                                
+                                ${product.price ? `<div class="price">${product.price}</div>` : ''}
+                                
+                                <div class="affiliate-buttons">
+                                    ${product.affiliateLinks.amazon ? 
+                                        `<a href="${product.affiliateLinks.amazon}" target="_blank" class="btn btn-affiliate">Purchase on Amazon</a>` : ''}
+                                    ${product.affiliateLinks.flipkart ? 
+                                        `<a href="${product.affiliateLinks.flipkart}" target="_blank" class="btn btn-affiliate">Purchase on Flipkart</a>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        ${related.length > 0 ? `
+                            <div class="related-section">
+                                <h3>You May Also Like</h3>
+                                <div class="products-grid">
+                                    ${related.map(p => `
+                                        <article class="product-card" onclick="navigateTo('product', ${p.id})">
+                                            <div class="product-image-wrapper">
+                                                <img src="${p.image}" alt="${p.title}" class="product-image">
+                                                <span class="product-category-badge">${p.category}</span>
+                                            </div>
+                                            <div class="product-info">
+                                                <h3 class="product-title">${p.title}</h3>
+                                                <p class="product-description">${p.shortDescription}</p>
+                                                <button class="btn btn-secondary">View Details</button>
+                                            </div>
+                                        </article>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ================================================
+        // ABOUT PAGE
+        // ================================================
+        
+        function renderAbout() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <section class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1>About Curated</h1>
+                            <div class="hero-divider"></div>
+                            <p>Where thoughtful curation meets timeless design</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="legal-page">
+                    <div class="container-narrow">
+                        <div class="legal-content">
+                            <p style="font-size: 1.15rem; line-height: 1.9;">Welcome to Curated, a carefully assembled collection of exceptional products that represent the intersection of quality, design, and lasting value.</p>
+                            
+                            <h3>Our Mission</h3>
+                            <p>In a world of endless choices, we believe in the power of curation. Our mission is to cut through the noise and present only those items that meet our exacting standards for craftsmanship, sustainability, and timeless design.</p>
+                            
+                            <h3>Our Process</h3>
+                            <p>Every product featured on Curated undergoes rigorous evaluation. We personally test and research each item, considering factors like build quality, user experience, environmental impact, and long-term value. We showcase only what we would proudly recommend to family and friends.</p>
+                            
+                            <h3>Our Values</h3>
+                            <p>Quality over quantity. Design that endures. Products that improve with age. We believe in investing in fewer, better things—items that bring joy and function to daily life for years to come.</p>
+                            
+                            <h3>Transparency</h3>
+                            <p>As an affiliate website, we earn commissions when you purchase products through our links. This support allows us to continue our work of curation and review. However, our recommendations are never influenced by commission rates—only by our genuine belief in a product's merit.</p>
+                            
+                            <p style="font-size: 1.15rem; margin-top: 2rem;">Thank you for trusting Curated as your guide to thoughtful consumption.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ================================================
+        // BLOG PAGE
+        // ================================================
+        
+        function renderBlog() {
+            const posts = [
+                {
+                    id: 1,
+                    title: "The Art of Mindful Consumption",
+                    excerpt: "Exploring the philosophy behind buying fewer, better things and how it transforms our relationship with possessions.",
+                    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80",
+                    date: "February 8, 2026",
+                    category: "Philosophy"
+                },
+                {
+                    id: 2,
+                    title: "Investing in Kitchen Essentials",
+                    excerpt: "The core cookware pieces every home chef needs, and why quality matters more than quantity.",
+                    image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
+                    date: "February 5, 2026",
+                    category: "Kitchen"
+                },
+                {
+                    id: 3,
+                    title: "The Return of Craftsmanship",
+                    excerpt: "Why handmade and artisan products are experiencing a renaissance in our mass-produced world.",
+                    image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800&q=80",
+                    date: "February 1, 2026",
+                    category: "Craftsmanship"
+                }
+            ];
+            
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="blog-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1>Journal</h1>
+                            <p class="section-subtitle">Thoughts on design, quality, and the art of living well</p>
+                        </div>
+                        
+                        <div class="blog-grid">
+                            ${posts.map(post => `
+                                <article class="blog-card">
+                                    <img src="${post.image}" alt="${post.title}" class="blog-image">
+                                    <div class="blog-content">
+                                        <div class="blog-meta">${post.date} · ${post.category}</div>
+                                        <h3 class="blog-title">${post.title}</h3>
+                                        <p class="blog-excerpt">${post.excerpt}</p>
+                                        <button class="btn btn-secondary">Read Article</button>
+                                    </div>
+                                </article>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ================================================
+        // CONTACT PAGE
+        // ================================================
+        
+        function renderContact() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="contact-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h1>Get In Touch</h1>
+                            <p class="section-subtitle">We'd love to hear from you</p>
+                        </div>
+                        
+                        <form class="contact-form" onsubmit="handleContact(event)">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-textarea" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function handleContact(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We\'ll respond within 48 hours.');
+            e.target.reset();
+        }
+        
+        // ================================================
+        // ADMIN SECTION
+        // ================================================
+        
+        function renderAdminLogin() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="admin-login">
+                    <div class="login-box">
+                        <h2>Admin Access</h2>
+                        <form onsubmit="handleAdminLogin(event)">
+                            <div class="form-group">
+                                <label class="form-label">Username</label>
+                                <input type="text" class="form-input" id="adminUsername" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Password</label>
+                                <input type="password" class="form-input" id="adminPassword" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                        </form>
+                        
+                        <p style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem; color: var(--color-stone);">
+                            Default credentials: admin / admin123
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            if (login(username, password)) {
+                renderAdminDashboard();
+            } else {
+                alert('Invalid credentials');
+            }
+        }
+        
+        function renderAdminDashboard() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="admin-dashboard">
+                    <div class="admin-header">
+                        <div class="container">
+                            <div class="admin-actions">
+                                <h2>Product Management</h2>
+                                <div style="display: flex; gap: 1rem;">
+                                    <button class="btn btn-primary btn-small" onclick="showProductModal()">Add Product</button>
+                                    <button class="btn btn-secondary btn-small" onclick="logout()">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="admin-content">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Title</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${STATE.products.map(p => `
+                                        <tr>
+                                            <td><img src="${p.image}" alt="${p.title}"></td>
+                                            <td>${p.title}</td>
+                                            <td>${p.category}</td>
+                                            <td>${p.price || 'N/A'}</td>
+                                            <td>
+                                                <div class="action-btns">
+                                                    <button class="btn btn-secondary btn-small" onclick="editProduct(${p.id})">Edit</button>
+                                                    <button class="btn btn-primary btn-small" onclick="deleteProduct(${p.id})">Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function showProductModal(productId = null) {
+            const product = productId ? STATE.products.find(p => p.id === productId) : null;
+            const isEdit = !!product;
+            
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalTitle.textContent = isEdit ? 'Edit Product' : 'Add New Product';
+            
+            modalBody.innerHTML = `
+                <form onsubmit="handleProductSubmit(event, ${isEdit ? productId : null})">
+                    <div class="form-group">
+                        <label class="form-label">Product Title</label>
+                        <input type="text" class="form-input" id="prodTitle" value="${product?.title || ''}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-select" id="prodCategory" required>
+                            ${CATEGORIES.slice(1).map(cat => `
+                                <option value="${cat.name}" ${product?.category === cat.name ? 'selected' : ''}>${cat.name}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Image URL</label>
+                        <input type="url" class="form-input" id="prodImage" value="${product?.image || ''}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Short Description</label>
+                        <textarea class="form-textarea" id="prodShortDesc" required>${product?.shortDescription || ''}</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Full Description</label>
+                        <textarea class="form-textarea" id="prodFullDesc" required>${product?.fullDescription || ''}</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Features (one per line)</label>
+                        <textarea class="form-textarea" id="prodFeatures">${product?.features?.join('\n') || ''}</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Price</label>
+                        <input type="text" class="form-input" id="prodPrice" value="${product?.price || ''}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Amazon Link</label>
+                        <input type="url" class="form-input" id="prodAmazon" value="${product?.affiliateLinks?.amazon || ''}">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Flipkart Link</label>
+                        <input type="url" class="form-input" id="prodFlipkart" value="${product?.affiliateLinks?.flipkart || ''}">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">${isEdit ? 'Update' : 'Add'} Product</button>
+                </form>
+            `;
+            
+            document.getElementById('modal').classList.add('active');
+        }
+        
+        function handleProductSubmit(e, productId) {
+            e.preventDefault();
+            
+            const data = {
+                id: productId || Date.now(),
+                title: document.getElementById('prodTitle').value,
+                category: document.getElementById('prodCategory').value,
+                image: document.getElementById('prodImage').value,
+                shortDescription: document.getElementById('prodShortDesc').value,
+                fullDescription: document.getElementById('prodFullDesc').value,
+                features: document.getElementById('prodFeatures').value.split('\n').filter(f => f.trim()),
+                price: document.getElementById('prodPrice').value,
+                affiliateLinks: {
+                    amazon: document.getElementById('prodAmazon').value,
+                    flipkart: document.getElementById('prodFlipkart').value
+                }
+            };
+            
+            if (productId) {
+                const index = STATE.products.findIndex(p => p.id === productId);
+                STATE.products[index] = data;
+            } else {
+                STATE.products.unshift(data);
+            }
+            
+            saveProducts();
+            loadProducts();
+            closeModal();
+            renderAdminDashboard();
+            alert('Product saved successfully!');
+        }
+        
+        function editProduct(id) {
+            showProductModal(id);
+        }
+        
+        function deleteProduct(id) {
+            if (confirm('Delete this product?')) {
+                STATE.products = STATE.products.filter(p => p.id !== id);
+                saveProducts();
+                renderAdminDashboard();
+            }
+        }
+        
+        // ================================================
+        // LEGAL PAGES
+        // ================================================
+        
+        function renderPrivacy() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="legal-page">
+                    <div class="container-narrow">
+                        <div class="legal-content">
+                            <h1>Privacy Policy</h1>
+                            <p><em>Last updated: February 10, 2026</em></p>
+                            
+                            <h3>Information Collection</h3>
+                            <p>We collect information you provide when subscribing to our newsletter or contacting us. This may include your name and email address.</p>
+                            
+                            <h3>Use of Information</h3>
+                            <p>We use collected information to provide our services, send newsletters, and respond to inquiries. We never sell your personal information.</p>
+                            
+                            <h3>Cookies</h3>
+                            <p>We use cookies to enhance your browsing experience and analyze site traffic. You can control cookies through your browser settings.</p>
+                            
+                            <h3>Data Security</h3>
+                            <p>We implement appropriate security measures to protect your personal information.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderDisclaimer() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="legal-page">
+                    <div class="container-narrow">
+                        <div class="legal-content">
+                            <h1>Affiliate Disclaimer</h1>
+                            <p><em>Last updated: February 10, 2026</em></p>
+                            
+                            <h3>Affiliate Relationships</h3>
+                            <p>Curated participates in affiliate advertising programs. When you click links and make purchases, we may earn a commission at no additional cost to you.</p>
+                            
+                            <h3>Product Recommendations</h3>
+                            <p>All product recommendations are based on genuine evaluation and personal experience. We only feature products we believe offer exceptional value.</p>
+                            
+                            <h3>Independence</h3>
+                            <p>Our recommendations are never influenced by commission rates. We maintain complete editorial independence in our curation process.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderTerms() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="legal-page">
+                    <div class="container-narrow">
+                        <div class="legal-content">
+                            <h1>Terms & Conditions</h1>
+                            <p><em>Last updated: February 10, 2026</em></p>
+                            
+                            <h3>Acceptance</h3>
+                            <p>By accessing Curated, you accept these terms and conditions in full.</p>
+                            
+                            <h3>Use License</h3>
+                            <p>Permission is granted to view and download materials for personal, non-commercial use only.</p>
+                            
+                            <h3>Disclaimer</h3>
+                            <p>Materials are provided 'as is' without warranties of any kind. We make no guarantees regarding product availability or pricing.</p>
+                            
+                            <h3>External Links</h3>
+                            <p>Our site contains links to third-party websites. We have no control over and assume no responsibility for their content or practices.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ================================================
+        // 404 PAGE
+        // ================================================
+        
+        function render404() {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <div class="error-page">
+                    <div class="error-content">
+                        <h1>404</h1>
+                        <h2>Page Not Found</h2>
+                        <p style="font-size: 1.2rem; color: var(--color-stone); margin: 2rem 0;">The page you're looking for doesn't exist.</p>
+                        <button class="btn btn-primary" onclick="navigateTo('home')">Return Home</button>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ================================================
+        // MODAL FUNCTIONS
+        // ================================================
+        
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+        
+        // Click outside to close
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') closeModal();
+        });
+        
+        // ================================================
+        // NEWSLETTER
+        // ================================================
+        
+        function handleNewsletter(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            e.target.reset();
+        }
+        
+        // ================================================
+        // HEADER SCROLL EFFECT
+        // ================================================
+        
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // ================================================
+        // MOBILE MENU
+        // ================================================
+        
+        document.getElementById('mobileToggle').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+            document.getElementById('mobileToggle').classList.toggle('active');
+        });
+        
+        // ================================================
+        // INITIALIZATION
+        // ================================================
+        
+        function init() {
+            initStorage();
+            STATE.isAdmin = checkAuth();
+            navigateTo('home');
+        }
+        
+        // Start application
+        init();
+    </script>
+</body>
+</html>
